@@ -330,6 +330,10 @@ class AsynchronousChannelBase : Event
         return true;
     }
 
+	public AsynchronousChannelSelector getSelector() {
+		return _selector;
+	}
+
 	protected
 	{
 		AsynchronousChannelSelector _selector;
