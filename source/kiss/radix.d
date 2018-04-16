@@ -1,5 +1,5 @@
 
-module zhang2018.radix;
+module huntlabs.radix;
 
 import std.stdio;
 import core.memory;
@@ -10,7 +10,7 @@ import core.stdc.stdlib;
 private:
 
 version(DEBUG_LOG){
-	import zhang2018.common.Log;
+	import huntlabs.common.Log;
 }else{
 	void debug_log( A ...)( A args){
 		return;
@@ -1494,7 +1494,7 @@ unittest{
 			string key;
 			for(uint i = 0 ; i < len ; i++)
 			{
-				ulong index = uniform(0 , origin.length);
+				size_t index = uniform(0 , origin.length);
 				key ~= origin[index];
 			}
 			keys ~= key;
