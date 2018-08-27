@@ -42,7 +42,7 @@ class Timer : AbstractTimer
     this(Selector loop, Duration duration)
     {
         super(loop);
-        this.interval = interval;
+        this.interval = duration;
     }
 
 protected:
