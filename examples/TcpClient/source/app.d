@@ -11,9 +11,7 @@ void main()
 	client.onConnected((bool isSucceeded) {
 		if (isSucceeded)
 		{
-			// writeln("The connection succeeded!");
-			// FIXME: noticed by Administrator @ 2018-4-4 17:50:33
-			// writeln("connected with: ", client.remoteAddress.toString()); 
+			writeln("connected with: ", client.remoteAddress.toString()); 
 			client.write(cast(const(ubyte[])) "Hello world!", (in ubyte[] wdata, size_t size) {
 				debug writeln("sent: size=", size, "  content: ", cast(string) wdata);
 			});
@@ -38,7 +36,9 @@ void main()
 		// 	}));
 	}).onClosed(() {
 		writeln("The connection is closed!");
-		loop.stop(); // 
+		// FIXME: Needing refactor or cleanup -@Administrator at 8/27/2018, 6:37:14 PM		
+		// 
+		// loop.stop(); // It's will raise a exception: Invalid memory operation 
 	}).connect("127.0.0.1", 8090);
 
 	loop.run();
