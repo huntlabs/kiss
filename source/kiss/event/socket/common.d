@@ -142,7 +142,6 @@ abstract class AbstractSocketChannel : AbstractChannel
     {
         this.handle = s.handle();
         this._family = s.addressFamily;
-        // _localAddress = s.localAddress();
         version (Posix)
             s.blocking = false;
         _socket = s;
@@ -172,7 +171,7 @@ abstract class AbstractSocketChannel : AbstractChannel
 
     void onWriteDone() 
     {
-        assert(false, "not implemented");
+        assert(false, "unimplemented");
     }
 
 protected:
