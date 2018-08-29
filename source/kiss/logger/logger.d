@@ -481,13 +481,12 @@ protected:
 		{
 			version (Windows)
 			{
-
 				import core.sys.windows.wincon;
 				import core.sys.windows.winbase;
 				import core.sys.windows.windef;
 
 				__gshared HANDLE g_hout;
-				if (g_hout !is null)
+				if (g_hout is null)
 					g_hout = GetStdHandle(STD_OUTPUT_HANDLE);
 			}
 			ushort color;
