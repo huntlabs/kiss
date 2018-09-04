@@ -11,19 +11,18 @@
 
 module kiss.net.TcpStream;
 
+import kiss.container.ByteBuffer;
+import kiss.core;
 import kiss.event;
 import kiss.net.core;
+import kiss.logger;
 
 import std.format;
-import std.socket;
 import std.exception;
-import kiss.logger;
 import std.socket;
 import core.thread;
 import core.time;
 
-import kiss.container.ByteBuffer;
-import kiss.core;
 
 /**
 */
